@@ -1,7 +1,9 @@
 ## TASK 1 :
 
 # Create bucket1.json
+
 ```
+
 cat > bucket1.json <<EOF
 {  
    "name": "$DEVSHELL_PROJECT_ID-bucket-1",
@@ -9,6 +11,7 @@ cat > bucket1.json <<EOF
    "storageClass": "multi_regional"
 }
 EOF
+
 ```
 
 # Create bucket1
