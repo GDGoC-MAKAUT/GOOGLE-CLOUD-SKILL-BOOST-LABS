@@ -1,0 +1,24 @@
+### Export Data from BigQuery to Cloud Storage
+
+
+
+
+```bash
+
+bq load --source_format=CSV --autodetect customer_details.customers customers.csv
+```
+```
+bq query --use_legacy_sql=false --destination_table customer_details.male_customers 'SELECT CustomerID, Gender FROM customer_details.customers WHERE Gender="Male"'
+```
+```
+bq extract customer_details.male_customers gs://[PROJECT_ID]-bucket/exported_male_customers.csv
+```
+```
+bq query --use_legacy_sql=false --replace --destination_table=customer_details.male_customers 'SELECT CustomerID, Gender FROM customer_details.customers WHERE Gender = "Male"'
+```
+
+
+
+
+
+
